@@ -484,7 +484,7 @@ def get_product_list(request_product_ids):
                     log_cache_operation("cache_miss", cache_hit=False, cache_size=len(cached_ids), operation_start_time=cache_operation_start)
                     
                     # Fetch from product catalog
-                	cat_response = product_catalog_stub.GetProduct(demo_pb2.Empty())
+                    cat_response = product_catalog_stub.GetProduct(demo_pb2.Empty())
                     response_ids = [x.id for x in cat_response.products]
                     
                     # Simulate cache leak by duplicating entries
